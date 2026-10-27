@@ -1,0 +1,27 @@
+name: unified-notify
+version: 2.1.0
+kind: standalone
+manifest_version: 2
+api_version: 1
+description: "Shared notification queue and verified owner replies via Telegram."
+author: Hermes Infra Ops
+config_schema:
+  channel_id:
+    type: int
+    default: 0
+    label: Telegram recipient ID
+    description: "Positive ID for a private chat, negative for a group or channel."
+  owner_user_id:
+    type: int
+    default: 0
+    label: Owner's Telegram user ID
+    description: "Replies are accepted only from this personal account."
+  batch_size:
+    type: int
+    default: 10
+    label: Send batch size
+    description: From 1 to 10.
+  spacing_seconds:
+    type: float
+    default: 1.0
+    label: Interval between sends (seconds)
